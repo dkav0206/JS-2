@@ -1,0 +1,12 @@
+*{
+    transition: 0.5s all;
+}
+
+body{
+    background-color: grey;
+}
+
+.resultHolder{
+    width: 100%;
+    background-color: lightblue
+}
