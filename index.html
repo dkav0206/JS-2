@@ -146,7 +146,7 @@
                             <form>
                                 <div class="form-group">
                                     <label for="userType">Chọn loại khách hàng</label>
-                                        <select class="form-control" id="userType">
+                                        <select class="form-control" id="userType" onchange="checkType()">
                                             <option>Chọn khách hàng</option>
                                             <option value="1">Nhà Dân</option>
                                             <option value="2">Doanh Nghiệp</option>
@@ -159,6 +159,10 @@
                                 <div class="form-group">
                                     <label for="channelNo">Số kênh cao cấp</label>
                                     <input type="number" class="form-control" id="channelNo" placeholder="Nhập số">
+                                </div>
+                                <div class="form-group" style="display: none;" id="divForConnection">
+                                    <label for="connectionNo">Số kết nối</label>
+                                    <input type="number" class="form-control" id="connectionNo" placeholder="Nhập số">
                                 </div>
                                 <button onclick="calExpense()" type="button" class="btn btn-primary">Đây là cái nút</button>
                             </form>

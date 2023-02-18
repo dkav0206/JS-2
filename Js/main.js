@@ -88,11 +88,20 @@ function calTax(){
 
 }
 
+function checkType(){
+    let userType =  Number(document.getElementById("userType").value);
+    if(userType === 2){
+        document.getElementById("divForConnection").style.display = "block";
+    }else{
+        document.getElementById("divForConnection").style.display = "none";
+    }
+}
 
 function calExpense(){
     let userType =  Number(document.getElementById("userType").value);
     let idUser = document.getElementById("idUser").value;
     let channelNo = Number(document.getElementById("channelNo").value);
+    let connectionNo = Number(document.getElementById("connectionNo").value);
     let totalChannelFee;
     if (!userType){ 
         alert("Hãy chọn loại khách hàng");
@@ -101,6 +110,11 @@ function calExpense(){
         totalChannelFee = 25 + channelNo * 7.5;
         document.getElementById("resultB4").innerHTML = "Mã khách hàng: " + idUser +  "</br>Tiền cáp: $" +  new Intl.NumberFormat('vn-VN').format(totalChannelFee);
     } else if (userType === 2){
-        
+        if (connectionNo <= 10){
+            totalChannelFee = 90 + channelNo * 50;
+        }else { 
+            totalChannelFee = 90 + channelNo * 50 + (connectionNo-10)*5;
+        }
+        document.getElementById("resultB4").innerHTML = "Mã khách hàng: " + idUser +  "</br>Tiền cáp: $" +  new Intl.NumberFormat('vn-VN').format(totalChannelFee);
     }
 }
